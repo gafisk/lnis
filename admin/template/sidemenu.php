@@ -10,7 +10,11 @@
         <li>
           <a href="#" class="nav-link px-3 active">
             <span class="me-2">
-              <img src="images/<?=$_SESSION['gambar']?>" class="img-circle user-image" width="50" height="50"
+              <?php
+              $username = $_SESSION['username'];
+              $datagambar = take_data("SELECT gambar FROM user WHERE username='$username'");
+              ?>
+              <img src="images/<?= $datagambar['gambar'] ?>" class="img-circle user-image" width="50" height="50"
                 alt="User Image">
             </span>
             <span><strong><?= $_SESSION['name'] ?></strong></span>
@@ -72,7 +76,7 @@
           <div class="collapse" id="layouts">
             <ul class="navbar-nav ps-3">
               <li>
-                <a href="#" class="nav-link px-3">
+                <a href="user_edit.php" class="nav-link px-3">
                   <span class="me-2">
                     <i class="bi bi-gear"></i>
                   </span>

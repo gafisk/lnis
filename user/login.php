@@ -14,7 +14,6 @@ if (isset($_POST['submit'])) {
       $fetch_data = mysqli_fetch_assoc($login);
       if ($user == $fetch_data['username'] && $pass == $fetch_data['password'] && $fetch_data['level'] == 'admin') {
         $_SESSION['name'] = $fetch_data['nama'];
-        $_SESSION['gambar'] = $fetch_data['gambar'];
         $_SESSION['admin'] = 'admin';
         $_SESSION['username'] = $fetch_data['username'];
         header("location:../admin/index.php");
