@@ -14,6 +14,8 @@ $tahun = $_POST['tahun'];
 if (isset($_POST['informasi'])) :
   $data = query("SELECT * FROM informasi INNER JOIN jenis ON informasi.jenis = jenis.id WHERE waktu BETWEEN " . "'$tahun-" . "$bulan-" . "1' AND '$tahun-" . $bulan + 1 . "-" . "1'");
   $no = 1;
+  $_SESSION['bulan'] = $bulan;
+  $_SESSION['tahun'] = $tahun;
 ?>
 
 <!-- Content -->
@@ -30,7 +32,7 @@ if (isset($_POST['informasi'])) :
         <table class="table" style="margin: auto;">
           <thead>
             <tr>
-              <th> id </th>
+              <th> NO </th>
               <th> Jenis </th>
               <th> Plat Nomor </th>
               <th> atas_nama </th>
@@ -59,7 +61,9 @@ if (isset($_POST['informasi'])) :
             <?php endforeach; ?>
           </tbody>
         </table>
-        <a href="export.php" class="btn btn-primary mt-4"> CETAK DATA</a>
+        <form action="cetak.php" method="post">
+          <input type="submit" name="cetak" class="btn btn-success mt-3" value="Cetak Excel">
+        </form>
         <?php else : ?>
         <?= "NO DATA ??" ?>
         <?php endif; ?>
