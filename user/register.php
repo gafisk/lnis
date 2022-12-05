@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-  <section class="vh-100 bg-primary">
+  <section class=" bg-primary">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
             <div class="card-body p-5 text-center">
 
               <h3 class="mb-3">REGISTER AKUN</h3>
-
+              
               <form action="" method="POST" enctype="multipart/form-data">
                 <div class="form-outline mb-2">
                   <label class="form-label" for="typeEmailX-2">Foto Profil</label>
@@ -76,6 +76,10 @@ if (isset($_POST['submit'])) {
 
                 <button class="btn btn-success btn-lg btn-block" type="submit" name="submit"
                   id="submit">REGISTER</button>
+                <div class="mt-3">
+                  <p class="">Registered? <a href="login.php">Login</a></p>
+                </div> 
+
               </form>
             </div>
           </div>

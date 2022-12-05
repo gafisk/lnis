@@ -65,8 +65,12 @@ if (isset($_POST['submit'])) {
                   <input type="password" name="password" id="password" class="form-control form-control-lg" />
                 </div>
 
-                <a class="btn btn-warning btn-lg btn-block" href="register.php">Register</a>
                 <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" id="submit">Login</button>
+                <div class="mt-3">
+                  <p class="message">Not registered? <a href="register.php">Create an account</a></p>
+                </div> 
+                <!-- <a class="btn btn-warning btn-lg btn-block" href="register.php">Register</a> -->
+
               </form>
             </div>
           </div>
